@@ -1,0 +1,56 @@
+{
+	"name": "js-env-dev",
+	"version": "1.0.0",
+	"description": "This is a starter kit designed for Javascript development.",
+	"scripts": {
+		"test": "echo no tests"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/drewcook/js-dev-env.git"
+	},
+	"author": "Althea Web Services, LLC <altheawebservices@gmail.com> (http://altheawebservices.com/)",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/drewcook/js-dev-env/issues"
+	},
+	"homepage": "https://github.com/drewcook/js-dev-env",
+	"dependencies": {
+		"whatwg-fetch": "2.0.4"
+	},
+	"devDependencies": {
+		"babel-cli": "6.26.0",
+		"babel-core": "6.26.0",
+		"babel-loader": "7.1.4",
+		"babel-preset-env": "1.6.1",
+		"babel-register": "6.26.0",
+		"chai": "4.1.2",
+		"chalk": "2.3.2",
+		"cheerio": "1.0.0-rc.2",
+		"compression": "1.7.2",
+		"cross-env": "5.1.4",
+		"css-loader": "0.28.11",
+		"eslint": "4.19.1",
+		"eslint-plugin-import": "2.10.0",
+		"eslint-watch": "3.1.4",
+		"express": "4.16.3",
+		"extract-text-webpack-plugin": "3.0.2",
+		"html-webpack-plugin": "3.1.0",
+		"jsdom": "11.7.0",
+		"json-schema-faker": "0.5.0-rc13",
+		"json-server": "0.12.1",
+		"localtunnel": "1.8.3",
+		"mocha": "5.0.5",
+		"nock": "9.2.3",
+		"npm-run-all": "4.1.2",
+		"nsp": "3.2.1",
+		"numeral": "2.0.6",
+		"open": "0.0.5",
+		"rimraf": "2.6.2",
+		"style-loader": "0.20.3",
+		"webpack": "4.4.1",
+		"webpack-dev-middleware": "3.1.0",
+		"webpack-hot-middleware": "2.21.2",
+		"webpack-md5-hash": "0.0.6"
+	}
+}
