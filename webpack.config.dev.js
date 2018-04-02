@@ -1,29 +1,29 @@
 import path from "path";
 
 export default {
-	mode: "development",
 	devtool: "inline-source-map",
 	entry: [
-		path.resolve(__dirname, "src/index")
+		path.resolve(__dirname, "src/index"),
 	],
-	target: "web",
-	output: {
-		path: path.resolve(__dirname, "src"),
-		publicPath: "/",
-		filename: "bundle.js"
-	},
-	plugins: [],
+	mode: "development",
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
 				exclude: /node_modules/,
-				use: ["babel-loader"]
+				test: /\.js$/,
+				use: ["babel-loader", ],
 			},
 			{
 				test: /\.css$/,
-				use: ["style-loader", "css-loader"]
-			}
-		]
-	}
-}
+				use: ["style-loader", "css-loader", ],
+			},
+		],
+	},
+	output: {
+		filename: "bundle.js",
+		path: path.resolve(__dirname, "src"),
+		publicPath: "/",
+	},
+	plugins: [],
+	target: "web",
+};
