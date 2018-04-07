@@ -40,7 +40,6 @@
 		"no-trailing-spaces": ["error"],
 		"semi": ["error"],
 		"sort-imports": ["warn"],
-		"sort-keys": ["warn"],
 		"sort-vars": ["warn"],
 		"spaced-comment": ["error"],
 		"no-duplicate-imports": ["error"],
