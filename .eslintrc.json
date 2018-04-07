@@ -26,7 +26,13 @@
 		"no-eval": ["error"],
 		"vars-on-top": ["warn"],
 		"block-spacing": ["error"],
-		"comma-dangle": ["error", "always"],
+		"comma-dangle": ["error", {
+			"arrays": "always-multiline",
+			"objects": "always-multiline",
+			"imports": "never",
+			"exports": "always-multiline",
+			"functions": "always-multiline"
+		}],
 		"comma-spacing": ["error"],
 		"eol-last": ["error"],
 		"jsx-quotes": ["error"],
