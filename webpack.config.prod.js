@@ -2,11 +2,11 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import path from "path";
 
 export default {
-	devtool: "inline-source-map",
+	devtool: "source-map",
 	entry: [
 		path.resolve(__dirname, "src/index"),
 	],
-	mode: "development",
+	mode: "production",
 	module: {
 		rules: [
 			{
@@ -22,7 +22,7 @@ export default {
 	},
 	output: {
 		filename: "bundle.js",
-		path: path.resolve(__dirname, "src"),
+		path: path.resolve(__dirname, "dist"),
 		publicPath: "/",
 	},
 	plugins: [
@@ -30,6 +30,18 @@ export default {
 		new HtmlWebpackPlugin({
 			template: "src/index.html",
 			inject: true,
+			minify: {
+				removeComments: true,
+				collapseWhitespace: true,
+				removeReduncantAttributes: true,
+				useShortDoctype: true,
+				removeEmptyAttributes: true,
+				removeStyleLinkTypeAttributes: true,
+				keepClosingSlash: true,
+				minifyJS: true,
+				minifyCSS: true,
+				minifyURLs: true,
+			},
 		}),
 	],
 	target: "web",
