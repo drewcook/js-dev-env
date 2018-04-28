@@ -9,12 +9,14 @@ import compression from "compression";
 import express from "express";
 import open from "open";
 import path from "path";
+import cors from "cors";
 
 /* eslint-disable no-console */
 
-const port = 3000;
+let port = process.env.PORT || 5000;
 const app = express();
 
+app.use(cors());
 app.use(compression());
 app.use(express.static("dist"));
 

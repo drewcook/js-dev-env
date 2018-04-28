@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": 33816633,
+      "firstName": "Ciara",
+      "lastName": "Lind",
+      "email": "Dereck45@gmail.com"
+    },
+    {
+      "id": 61460113,
+      "firstName": "Micah",
+      "lastName": "West",
+      "email": "Nikki25@hotmail.com"
+    },
+    {
+      "id": 36812884,
+      "firstName": "Jennyfer",
+      "lastName": "Douglas",
+      "email": "Toby.Sporer@yahoo.com"
+    },
+    {
+      "id": 21605242,
+      "firstName": "Karine",
+      "lastName": "Walsh",
+      "email": "Leonor.Daugherty@hotmail.com"
+    },
+    {
+      "id": 21312311,
+      "firstName": "Jettie",
+      "lastName": "Luettgen",
+      "email": "Cortez_Wunsch@hotmail.com"
+    }
+  ]
+}
