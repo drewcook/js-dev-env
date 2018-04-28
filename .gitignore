@@ -2,6 +2,9 @@
 .idea
 .vs
 
+# Project ignores
+dist
+api/db.json
 
 # Logs
 logs
