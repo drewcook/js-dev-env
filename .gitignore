@@ -4,7 +4,7 @@
 
 # Project ignores
 dist
-api/db.json
+src/api/db.json
 
 # Logs
 logs
