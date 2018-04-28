@@ -1,11 +1,17 @@
+import ExtractTextPlugin from "extract-text-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import path from "path";
+import webpack from "webpack";
+import WebpackMd5Hash from "webpack-md5-hash";
+
+const extractCSS = new ExtractTextPlugin("styles.css");
 
 export default {
 	devtool: "source-map",
-	entry: [
-		path.resolve(__dirname, "src/index"),
-	],
+	entry: {
+		main: path.resolve(__dirname, "src/index"),
+		vendor: path.resolve(__dirname, "src/vendor"),
+	},
 	mode: "production",
 	module: {
 		rules: [
@@ -16,16 +22,41 @@ export default {
 			},
 			{
 				test: /\.css$/,
-				use: ["style-loader", "css-loader" ],
+				use: extractCSS.extract(["style-loader", "css-loader?sourceMap"]),
 			},
 		],
 	},
 	output: {
-		filename: "bundle.js",
+		filename: "[name].[chunkhash].js",
 		path: path.resolve(__dirname, "dist"),
 		publicPath: "/",
 	},
 	plugins: [
+		// Generate an external css file with a hash in the filename
+		extractCSS,
+
+		// Hash the files using MD5 so that their names change when the content changes
+		new WebpackMd5Hash(),
+
+		// Use CommonChunkPlugin to create a separate bundle
+		// of vendor libraries so that they're cached separately
+		new webpack.optimize.SplitChunksPlugin({
+			chunks: "all",
+			name: true,
+			cacheGroups: {
+				commons: {
+					name: "commons",
+					chunks: "initial",
+					minChunks: 2,
+				},
+				vendors: {
+					test: /[\\/]node_modules[\\/]/,
+					name: "vendors",
+					chunks: "all",
+				},
+			},
+		}),
+
 		// Create HTML file that includes reference to bundled JS
 		new HtmlWebpackPlugin({
 			template: "src/index.html",
@@ -33,7 +64,7 @@ export default {
 			minify: {
 				removeComments: true,
 				collapseWhitespace: true,
-				removeReduncantAttributes: true,
+				removeRedundantAttributes: true,
 				useShortDoctype: true,
 				removeEmptyAttributes: true,
 				removeStyleLinkTypeAttributes: true,
