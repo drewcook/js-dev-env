@@ -1,3 +1,4 @@
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import path from "path";
 
@@ -12,11 +13,11 @@ export default {
 			{
 				exclude: /node_modules/,
 				test: /\.js$/,
-				use: ["babel-loader" ],
+				use: ["babel-loader"],
 			},
 			{
 				test: /\.css$/,
-				use: ["style-loader", "css-loader" ],
+				use: [MiniCssExtractPlugin.loader, "css-loader"],
 			},
 		],
 	},
@@ -26,6 +27,11 @@ export default {
 		publicPath: "/",
 	},
 	plugins: [
+		// Generate an external css file with a hash in the filename
+		new MiniCssExtractPlugin({
+			filename: "[name].css",
+			chunkFilename: "[id].css",
+		}),
 		// Create HTML file that includes reference to bundled JS
 		new HtmlWebpackPlugin({
 			template: "src/index.html",

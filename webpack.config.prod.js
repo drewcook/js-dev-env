@@ -1,10 +1,8 @@
-import ExtractTextPlugin from "extract-text-webpack-plugin";
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import path from "path";
 import webpack from "webpack";
 import WebpackMd5Hash from "webpack-md5-hash";
-
-const extractCSS = new ExtractTextPlugin("styles.css");
 
 export default {
 	devtool: "source-map",
@@ -22,7 +20,7 @@ export default {
 			},
 			{
 				test: /\.css$/,
-				use: extractCSS.extract(["style-loader", "css-loader?sourceMap"]),
+				use: [MiniCssExtractPlugin.loader, "css-loader?minimize=true"],
 			},
 		],
 	},
@@ -33,7 +31,10 @@ export default {
 	},
 	plugins: [
 		// Generate an external css file with a hash in the filename
-		extractCSS,
+		new MiniCssExtractPlugin({
+			filename: "[name].[hash].css",
+			chunkFilename: "[id].[hash].css",
+		}),
 
 		// Hash the files using MD5 so that their names change when the content changes
 		new WebpackMd5Hash(),
