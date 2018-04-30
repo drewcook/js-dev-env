@@ -2,6 +2,24 @@
 
 This is a generic JavaScript development environment that was built from scratch. This isn't tied to any specific JS framework.
 
+## Features
+
+1. ES6/ES7 Transpiling - w/ Babel
+2. Bundling - w/ Webpack 4
+3. Minification - w/ Webpack 4
+4. Sourcemaps - w/ Webpack 4
+5. Dynamic HTML Generation - w/ Webpack 4
+6. Centralized HTTP API - w/ Fetch
+7. Mock API - w/ Express
+8. Development Webserver - w/ Express
+9. Linting - w/ ESLint
+10. Automated testing - w/ Mocha & Chai
+11. Continuous Integration - w/ Travis CI (for Mac/Linux) & Appveyor (for Windows)
+12. Automated Builds for Production/Development
+13. Automated Deployment - w/ Heroku for server-side API & Surge for static UI assets
+14. Build Scripts - w/ NPM scripts
+15. Editorconfig
+
 ## Get Started
 
 1. **Install [Node](https://nodejs.org)**. Need to run multiple versions of Node? Use [nvm](https://github.com/creationix/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows)
