@@ -27,6 +27,24 @@ function del(url) {
 	return fetch(request).then(onSuccess, onError);
 }
 
+function update(url, data) {
+	const request = new Request(baseUrl + url, {
+		method: "PUT",
+		body: JSON.stringify(data),
+	});
+
+	return fetch(request).then(onSuccess, onError);
+}
+
+function post(url, data) {
+	const request = new Request(baseUrl + url, {
+		method: "POST",
+		body: JSON.stringify(data),
+	});
+
+	return fetch(request).then(onSuccess, onError);
+}
+
 function onSuccess(response) {
 	return response.json();
 }
