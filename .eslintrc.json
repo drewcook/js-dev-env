@@ -44,6 +44,7 @@
 		"spaced-comment": ["error"],
 		"no-duplicate-imports": ["error"],
 		"no-useless-constructor": ["warn"],
+		"no-unused-vars": ["warn"],
 		"no-var": ["error"],
 		"prefer-arrow-callback": ["warn"],
 		"prefer-spread": ["error"]
