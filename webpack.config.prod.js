@@ -42,7 +42,7 @@ export default {
 		// Use CommonChunkPlugin to create a separate bundle
 		// of vendor libraries so that they're cached separately
 		new webpack.optimize.SplitChunksPlugin({
-			chunks: "all",
+			chunks: "async",
 			name: true,
 			cacheGroups: {
 				commons: {
@@ -52,6 +52,7 @@ export default {
 				},
 				vendors: {
 					test: /[\\/]node_modules[\\/]/,
+					priority: -10,
 					name: "vendors",
 					chunks: "all",
 				},
